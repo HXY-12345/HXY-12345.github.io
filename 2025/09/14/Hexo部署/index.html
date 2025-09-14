@@ -19,23 +19,26 @@
   <meta name="author" content="HXXYY">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="hexo部署整体思路本文使用Hexo框架，在阿里云服务器上搭建个人博客。整体思路为在本地进行Hexo安装以及平时帖子的编写，然后使用裸仓库以及Hexo的部署功能将博客部署到远程的服务器上进行访问。 本地环境环境安装文档 安装 Hexo 相当简单，只需要先安装下列应用程序即可：  Node.js (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本) Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2025/09/14/hello-world/index.html">
+<meta property="og:title" content="hexo部署">
+<meta property="og:url" content="http://example.com/2025/09/14/Hexo%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="HXXYY&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="hexo部署整体思路本文使用Hexo框架，在阿里云服务器上搭建个人博客。整体思路为在本地进行Hexo安装以及平时帖子的编写，然后使用裸仓库以及Hexo的部署功能将博客部署到远程的服务器上进行访问。 本地环境环境安装文档 安装 Hexo 相当简单，只需要先安装下列应用程序即可：  Node.js (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本) Git">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-09-14T09:47:32.153Z">
-<meta property="article:modified_time" content="2025-09-14T09:47:32.153Z">
+<meta property="og:image" content="http://example.com/img/Hexo%E9%83%A8%E7%BD%B2.png">
+<meta property="article:published_time" content="2025-09-14T12:52:48.000Z">
+<meta property="article:modified_time" content="2025-09-14T14:09:22.050Z">
 <meta property="article:author" content="HXXYY">
+<meta property="article:tag" content="博客搭建">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/Hexo%E9%83%A8%E7%BD%B2.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hello World - HXXYY&#39;s Blog</title>
+  <title>hexo部署 - HXXYY&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -195,13 +198,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/Hexo%E9%83%A8%E7%BD%B2.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.4)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="hexo部署"></span>
           
         </div>
 
@@ -217,8 +220,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-09-14 17:47" pubdate>
-          2025年9月14日 下午
+        <time datetime="2025-09-14 20:52" pubdate>
+          2025年9月14日 晚上
         </time>
       </span>
     
@@ -229,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18 字
+          663 字
         
       </span>
     
@@ -240,7 +243,7 @@
         
         
         
-          1 分钟
+          6 分钟
         
       </span>
     
@@ -286,24 +289,67 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">hexo部署</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+                <h1 id="hexo部署"><a href="#hexo部署" class="headerlink" title="hexo部署"></a>hexo部署</h1><h1 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h1><p>本文使用Hexo框架，在阿里云服务器上搭建个人博客。整体思路为在本地进行Hexo安装以及平时帖子的编写，然后使用<strong>裸仓库</strong>以及Hexo的部署功能将博客部署到远程的服务器上进行访问。</p>
+<h1 id="本地环境"><a href="#本地环境" class="headerlink" title="本地环境"></a>本地环境</h1><h3 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h3><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">文档</a></p>
+<p>安装 Hexo 相当简单，只需要先安装下列应用程序即可：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://nodejs.org/">Node.js</a> (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本)</li>
+<li><a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a></li>
+</ul>
+<p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<h1 id="服务器环境配置"><a href="#服务器环境配置" class="headerlink" title="服务器环境配置"></a>服务器环境配置</h1><h3 id="Step1-、安装基础软件"><a href="#Step1-、安装基础软件" class="headerlink" title="Step1 、安装基础软件"></a>Step1 、安装基础软件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 一次性安装所需组件</span><br><span class="hljs-built_in">sudo</span> apt install -y git nginx nodejs npm<br><br><span class="hljs-comment"># 验证安装（应显示版本号）</span><br>git --version  <span class="hljs-comment"># 需≥2.0</span><br>nginx -v       <span class="hljs-comment"># 需显示nginx/1.18.0+</span><br>node -v        <span class="hljs-comment"># 需≥v12.0</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<h3 id="Step2、Git裸仓库配置"><a href="#Step2、Git裸仓库配置" class="headerlink" title="Step2、Git裸仓库配置"></a>Step2、<strong>Git裸仓库配置</strong></h3><p>创建裸仓库（bare repository）<br>在 Git 里，“裸仓库（bare repository）”指的是<strong>只有 Git 版本库数据，没有工作区的仓库</strong>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 进入用户主目录</span><br><span class="hljs-built_in">cd</span> ~<br><br><span class="hljs-comment"># 创建git仓库（裸仓库没有工作目录）</span><br><span class="hljs-built_in">mkdir</span> hexo.git &amp;&amp; <span class="hljs-built_in">cd</span> hexo.git<br>git init --bare  <span class="hljs-comment"># 出现Initialized空仓库提示即成功</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<p>创建网站根目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建网站存放目录</span><br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mkdir</span> -p /var/www/hexo<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>配置自动部署钩子</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建钩子文件（重要！）</span><br>nano ~/hexo.git/hooks/post-receive  <span class="hljs-comment"># 比vi更友好的编辑器</span><br><br><span class="hljs-comment"># 文件内容</span><br><span class="hljs-comment">#!/bin/bash</span><br>git --work-tree=/var/www/hexo --git-dir=/root/hexo.git checkout -f<br><br><span class="hljs-comment"># 保存方法</span><br>按Ctrl+O → 回车确认 → Ctrl+X退出<br></code></pre></td></tr></table></figure>
+
+<h3 id="Step3-Nginx配置"><a href="#Step3-Nginx配置" class="headerlink" title="Step3. Nginx配置"></a>Step3. <strong>Nginx配置</strong></h3><p>创建配置文件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nano /etc/nginx/sites-available/hexo<br></code></pre></td></tr></table></figure>
+
+<p>文件内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">server &#123;<br>    listen 80;<br>    server_name domain_name your_server_ip;  <span class="hljs-comment"># 替换为你的域名和公网IP</span><br>    root /var/www/hexo;<br><br>    location / &#123;<br>        try_files <span class="hljs-variable">$uri</span> <span class="hljs-variable">$uri</span>/ =404;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>启用配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建符号链接（相当于创建快捷方式）</span><br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">ln</span> -s /etc/nginx/sites-available/hexo /etc/nginx/sites-enabled/<br><br><span class="hljs-comment"># 测试配置语法（出现successful即正确）</span><br><span class="hljs-built_in">sudo</span> nginx -t<br><br><span class="hljs-comment"># 重启Nginx服务</span><br><span class="hljs-built_in">sudo</span> systemctl restart nginx<br></code></pre></td></tr></table></figure>
+
+<h1 id="本地Hexo配置"><a href="#本地Hexo配置" class="headerlink" title="本地Hexo配置"></a>本地Hexo配置</h1><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo init &lt;folder&gt;<br><span class="hljs-variable">$cd</span> &lt;folder&gt;<br>$ npm install<br></code></pre></td></tr></table></figure>
+
+<p>初始化后，您的项目文件夹将如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── <span class="hljs-built_in">source</span><br>|   ├── _drafts<br>|   └── _posts<br>└── themes<br></code></pre></td></tr></table></figure>
+
+<hr>
+<p>修改<code>_config.yml</code>文件：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">hexodeploy@your_server_ip:/home/hexodeploy/hexo.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">master</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>安装部署插件:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
+
+<p>执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean   <span class="hljs-comment"># 清理缓存</span><br>hexo g       <span class="hljs-comment"># 生成静态文件（generate缩写）</span><br>hexo d       <span class="hljs-comment"># 部署（deploy缩写）</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="最终验证"><a href="#最终验证" class="headerlink" title="最终验证"></a>最终验证</h1><ol>
+<li>浏览器访问：<code>https://你的服务器IP</code> 或域名</li>
+<li>服务器查看日志：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">tail</span> -f /var/log/nginx/access.log<br></code></pre></td></tr></table></figure>
+<p><img src="/2025/09/14/Hexo%E9%83%A8%E7%BD%B2/image01.png" srcset="/img/loading.gif" lazyload alt="部署效果"></p>
+<h1 id="主题更换"><a href="#主题更换" class="headerlink" title="主题更换"></a>主题更换</h1><p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a></p>
+<p><a target="_blank" rel="noopener" href="https://webfem.com/post/web-analyse">如何给网站添加免费数据统计 - webfem</a></p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a target="_blank" rel="noopener" href="https://zbshlv.fun/2025/03/06/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/">hexo部署到服务器上</a></p>
 
                 
               </div>
@@ -312,6 +358,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="category-chain-item">博客</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="print-no-link">#博客搭建</a>
+      
+    </div>
   
 </div>
 
@@ -321,8 +395,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/2025/09/14/hello-world/</div>
+      <div>hexo部署</div>
+      <div>http://example.com/2025/09/14/Hexo部署/</div>
     </div>
     <div class="license-meta">
       
@@ -366,15 +440,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/09/14/Hexo%E9%83%A8%E7%BD%B2/" title="hexo部署">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hexo部署</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2025/09/14/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
