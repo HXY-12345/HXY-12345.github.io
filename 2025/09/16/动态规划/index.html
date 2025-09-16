@@ -19,26 +19,26 @@
   <meta name="author" content="HXXYY">
   <meta name="keywords" content="">
   
-    <meta name="description" content="hexo部署整体思路本文使用Hexo框架，在阿里云服务器上搭建个人博客。整体思路为在本地进行Hexo安装以及平时帖子的编写，然后使用裸仓库以及Hexo的部署功能将博客部署到远程的服务器上进行访问。 本地环境环境安装文档 安装 Hexo 相当简单，只需要先安装下列应用程序即可：  Node.js (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本) Git">
+    <meta name="description" content="动态规划动态规划（Dynamic Programming，简称 DP）是一种将复杂问题分解为更小子问题、并保存子问题结果以避免重复计算的算法思想。 它非常适合求解具有重叠子问题（overlapping subproblems）和最优子结构（optimal substructure）的问题。 一、核心思想 划分子问题  把原问题拆成若干个规模更小、结构相同的子问题。  保存结果（记忆化）  子问题的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo部署">
-<meta property="og:url" content="http://example.com/2025/09/14/Hexo%E9%83%A8%E7%BD%B2/index.html">
+<meta property="og:title" content="动态规划">
+<meta property="og:url" content="http://example.com/2025/09/16/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.html">
 <meta property="og:site_name" content="HXXYY&#39;s Blog">
-<meta property="og:description" content="hexo部署整体思路本文使用Hexo框架，在阿里云服务器上搭建个人博客。整体思路为在本地进行Hexo安装以及平时帖子的编写，然后使用裸仓库以及Hexo的部署功能将博客部署到远程的服务器上进行访问。 本地环境环境安装文档 安装 Hexo 相当简单，只需要先安装下列应用程序即可：  Node.js (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本) Git">
+<meta property="og:description" content="动态规划动态规划（Dynamic Programming，简称 DP）是一种将复杂问题分解为更小子问题、并保存子问题结果以避免重复计算的算法思想。 它非常适合求解具有重叠子问题（overlapping subproblems）和最优子结构（optimal substructure）的问题。 一、核心思想 划分子问题  把原问题拆成若干个规模更小、结构相同的子问题。  保存结果（记忆化）  子问题的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/Hexo%E9%83%A8%E7%BD%B2.png">
-<meta property="article:published_time" content="2025-09-14T12:52:48.000Z">
-<meta property="article:modified_time" content="2025-09-14T14:09:22.050Z">
+<meta property="og:image" content="http://example.com/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.png">
+<meta property="article:published_time" content="2025-09-16T06:01:56.000Z">
+<meta property="article:modified_time" content="2025-09-16T06:26:26.315Z">
 <meta property="article:author" content="HXXYY">
-<meta property="article:tag" content="博客搭建">
+<meta property="article:tag" content="动态规划">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/Hexo%E9%83%A8%E7%BD%B2.png">
+<meta name="twitter:image" content="http://example.com/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>hexo部署 - HXXYY&#39;s Blog</title>
+  <title>动态规划 - HXXYY&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,13 +198,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/Hexo%E9%83%A8%E7%BD%B2.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.4)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="hexo部署"></span>
+            <span id="subtitle" data-typed-text="动态规划"></span>
           
         </div>
 
@@ -220,8 +220,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-09-14 20:52" pubdate>
-          2025年9月14日 晚上
+        <time datetime="2025-09-16 14:01" pubdate>
+          2025年9月16日 下午
         </time>
       </span>
     
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          663 字
+          741 字
         
       </span>
     
@@ -243,7 +243,7 @@
         
         
         
-          6 分钟
+          7 分钟
         
       </span>
     
@@ -289,67 +289,72 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">hexo部署</h1>
+            <h1 id="seo-header">动态规划</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="hexo部署"><a href="#hexo部署" class="headerlink" title="hexo部署"></a>hexo部署</h1><h1 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h1><p>本文使用Hexo框架，在阿里云服务器上搭建个人博客。整体思路为在本地进行Hexo安装以及平时帖子的编写，然后使用<strong>裸仓库</strong>以及Hexo的部署功能将博客部署到远程的服务器上进行访问。</p>
-<h1 id="本地环境"><a href="#本地环境" class="headerlink" title="本地环境"></a>本地环境</h1><h3 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h3><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">文档</a></p>
-<p>安装 Hexo 相当简单，只需要先安装下列应用程序即可：</p>
+                <h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>动态规划（Dynamic Programming，简称 DP）是一种<strong>将复杂问题分解为更小子问题、并保存子问题结果以避免重复计算</strong>的算法思想。</p>
+<p>它非常适合求解具有重叠子问题（overlapping subproblems）<strong>和</strong>最优子结构（optimal substructure）的问题。</p>
+<h2 id="一、核心思想"><a href="#一、核心思想" class="headerlink" title="一、核心思想"></a>一、核心思想</h2><ol>
+<li><p><strong>划分子问题</strong></p>
+<p> 把原问题拆成若干个规模更小、结构相同的子问题。</p>
+</li>
+<li><p><strong>保存结果（记忆化）</strong></p>
+<p> 子问题的结果会被重复用到，因此用数组或哈希表保存，避免重复计算。</p>
+</li>
+<li><p><strong>状态转移</strong></p>
+<p> 找到子问题之间的递推关系（状态转移方程），逐步推导出原问题的最优解。</p>
+</li>
+<li><p><strong>自底向上或自顶向下</strong></p>
 <ul>
-<li><a target="_blank" rel="noopener" href="http://nodejs.org/">Node.js</a> (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本)</li>
-<li><a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a></li>
+<li><strong>自顶向下</strong>：递归 + 记忆化</li>
+<li><strong>自底向上</strong>：迭代，从最小子问题开始，一步步推导更大规模的结果。</li>
 </ul>
-<p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
-
-<h1 id="服务器环境配置"><a href="#服务器环境配置" class="headerlink" title="服务器环境配置"></a>服务器环境配置</h1><h3 id="Step1-、安装基础软件"><a href="#Step1-、安装基础软件" class="headerlink" title="Step1 、安装基础软件"></a>Step1 、安装基础软件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 一次性安装所需组件</span><br><span class="hljs-built_in">sudo</span> apt install -y git nginx nodejs npm<br><br><span class="hljs-comment"># 验证安装（应显示版本号）</span><br>git --version  <span class="hljs-comment"># 需≥2.0</span><br>nginx -v       <span class="hljs-comment"># 需显示nginx/1.18.0+</span><br>node -v        <span class="hljs-comment"># 需≥v12.0</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="Step2、Git裸仓库配置"><a href="#Step2、Git裸仓库配置" class="headerlink" title="Step2、Git裸仓库配置"></a>Step2、<strong>Git裸仓库配置</strong></h3><p>创建裸仓库（bare repository）<br>在 Git 里，“裸仓库（bare repository）”指的是<strong>只有 Git 版本库数据，没有工作区的仓库</strong>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 进入用户主目录</span><br><span class="hljs-built_in">cd</span> ~<br><br><span class="hljs-comment"># 创建git仓库（裸仓库没有工作目录）</span><br><span class="hljs-built_in">mkdir</span> hexo.git &amp;&amp; <span class="hljs-built_in">cd</span> hexo.git<br>git init --bare  <span class="hljs-comment"># 出现Initialized空仓库提示即成功</span><br></code></pre></td></tr></table></figure>
-
-<p>创建网站根目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建网站存放目录</span><br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mkdir</span> -p /var/www/hexo<br></code></pre></td></tr></table></figure>
-
-<p>配置自动部署钩子</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建钩子文件（重要！）</span><br>nano ~/hexo.git/hooks/post-receive  <span class="hljs-comment"># 比vi更友好的编辑器</span><br><br><span class="hljs-comment"># 文件内容</span><br><span class="hljs-comment">#!/bin/bash</span><br>git --work-tree=/var/www/hexo --git-dir=/root/hexo.git checkout -f<br><br><span class="hljs-comment"># 保存方法</span><br>按Ctrl+O → 回车确认 → Ctrl+X退出<br></code></pre></td></tr></table></figure>
-
-<h3 id="Step3-Nginx配置"><a href="#Step3-Nginx配置" class="headerlink" title="Step3. Nginx配置"></a>Step3. <strong>Nginx配置</strong></h3><p>创建配置文件:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nano /etc/nginx/sites-available/hexo<br></code></pre></td></tr></table></figure>
-
-<p>文件内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">server &#123;<br>    listen 80;<br>    server_name domain_name your_server_ip;  <span class="hljs-comment"># 替换为你的域名和公网IP</span><br>    root /var/www/hexo;<br><br>    location / &#123;<br>        try_files <span class="hljs-variable">$uri</span> <span class="hljs-variable">$uri</span>/ =404;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>启用配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建符号链接（相当于创建快捷方式）</span><br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">ln</span> -s /etc/nginx/sites-available/hexo /etc/nginx/sites-enabled/<br><br><span class="hljs-comment"># 测试配置语法（出现successful即正确）</span><br><span class="hljs-built_in">sudo</span> nginx -t<br><br><span class="hljs-comment"># 重启Nginx服务</span><br><span class="hljs-built_in">sudo</span> systemctl restart nginx<br></code></pre></td></tr></table></figure>
-
-<h1 id="本地Hexo配置"><a href="#本地Hexo配置" class="headerlink" title="本地Hexo配置"></a>本地Hexo配置</h1><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo init &lt;folder&gt;<br><span class="hljs-variable">$cd</span> &lt;folder&gt;<br>$ npm install<br></code></pre></td></tr></table></figure>
-
-<p>初始化后，您的项目文件夹将如下所示：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── <span class="hljs-built_in">source</span><br>|   ├── _drafts<br>|   └── _posts<br>└── themes<br></code></pre></td></tr></table></figure>
-
-<hr>
-<p>修改<code>_config.yml</code>文件：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">hexodeploy@your_server_ip:/home/hexodeploy/hexo.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">master</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>安装部署插件:</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
-
-<p>执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean   <span class="hljs-comment"># 清理缓存</span><br>hexo g       <span class="hljs-comment"># 生成静态文件（generate缩写）</span><br>hexo d       <span class="hljs-comment"># 部署（deploy缩写）</span><br></code></pre></td></tr></table></figure>
-
-<h1 id="最终验证"><a href="#最终验证" class="headerlink" title="最终验证"></a>最终验证</h1><ol>
-<li>浏览器访问：<code>https://你的服务器IP</code> 或域名</li>
-<li>服务器查看日志：</li>
+</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">tail</span> -f /var/log/nginx/access.log<br></code></pre></td></tr></table></figure>
-<p><img src="/2025/09/14/Hexo%E9%83%A8%E7%BD%B2/image01.png" srcset="/img/loading.gif" lazyload alt="部署效果"></p>
-<h1 id="主题更换"><a href="#主题更换" class="headerlink" title="主题更换"></a>主题更换</h1><p>参考：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a></p>
-<p><a target="_blank" rel="noopener" href="https://webfem.com/post/web-analyse">如何给网站添加免费数据统计 - webfem</a></p>
-<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a target="_blank" rel="noopener" href="https://zbshlv.fun/2025/03/06/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/">hexo部署到服务器上</a></p>
+<h2 id="二、典型步骤"><a href="#二、典型步骤" class="headerlink" title="二、典型步骤"></a>二、典型步骤</h2><ol>
+<li><strong>定义状态</strong>：明确用什么变量表示“子问题”。</li>
+<li><strong>写出状态转移方程</strong>：描述如何从已知状态得到新状态。</li>
+<li><strong>初始化</strong>：确定最小子问题的解。</li>
+<li><strong>确定计算顺序</strong>：通常是自底向上填表。</li>
+</ol>
+<h2 id="三、举例：斐波那契数列"><a href="#三、举例：斐波那契数列" class="headerlink" title="三、举例：斐波那契数列"></a>三、举例：斐波那契数列</h2><p><strong>问题</strong>：求第 <code>n</code> 个斐波那契数，公式为</p>
+<p>F(n) &#x3D; F(n-1) + F(n-2)，其中 F(0)&#x3D;0, F(1)&#x3D;1。</p>
+<h3 id="1-普通递归（低效）"><a href="#1-普通递归（低效）" class="headerlink" title="1. 普通递归（低效）"></a>1. 普通递归（低效）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fib</span>(<span class="hljs-params">n</span>):<br>    <span class="hljs-keyword">if</span> n &lt;= <span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> n<br>    <span class="hljs-keyword">return</span> fib(n-<span class="hljs-number">1</span>) + fib(n-<span class="hljs-number">2</span>)<br><br></code></pre></td></tr></table></figure>
+
+<p>缺点：大量重复计算，时间复杂度 O(2^n)。</p>
+<h3 id="2-动态规划（自底向上）"><a href="#2-动态规划（自底向上）" class="headerlink" title="2. 动态规划（自底向上）"></a>2. 动态规划（自底向上）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fib_dp</span>(<span class="hljs-params">n</span>):<br>    <span class="hljs-keyword">if</span> n &lt;= <span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> n<br>    dp = [<span class="hljs-number">0</span>]*(n+<span class="hljs-number">1</span>)<br>    dp[<span class="hljs-number">0</span>], dp[<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>, <span class="hljs-number">1</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, n+<span class="hljs-number">1</span>):<br>        dp[i] = dp[i-<span class="hljs-number">1</span>] + dp[i-<span class="hljs-number">2</span>]<br>    <span class="hljs-keyword">return</span> dp[n]<br><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>状态定义</strong>：dp[i] 表示第 i 个斐波那契数</li>
+<li><strong>状态转移方程</strong>：dp[i] &#x3D; dp[i-1] + dp[i-2]</li>
+<li>时间复杂度 O(n)，空间 O(n)，也可以优化到 O(1)。</li>
+</ul>
+<h2 id="四、实用例子：最短路径（经典背包）"><a href="#四、实用例子：最短路径（经典背包）" class="headerlink" title="四、实用例子：最短路径（经典背包）"></a>四、实用例子：最短路径（经典背包）</h2><p><strong>问题</strong>：给定一个数组 <code>coins</code> 表示不同面值的硬币，以及一个总金额 <code>amount</code>，求凑成该金额所需的最少硬币数，如果无法凑成则返回 -1。</p>
+<p>（这就是著名的<strong>零钱兑换问题</strong>）</p>
+<h3 id="动态规划解法"><a href="#动态规划解法" class="headerlink" title="动态规划解法"></a>动态规划解法</h3><ol>
+<li><p><strong>状态</strong>：dp[i] 表示凑成金额 i 所需的最少硬币数。</p>
+</li>
+<li><p><strong>转移方程</strong>：</p>
+<p> dp[i] &#x3D; min(dp[i - coin] + 1) for coin in coins if i - coin &gt;&#x3D; 0</p>
+</li>
+<li><p><strong>初始化</strong>：dp[0] &#x3D; 0，其余为无穷大。</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">coinChange</span>(<span class="hljs-params">coins, amount</span>):<br>    dp = [<span class="hljs-built_in">float</span>(<span class="hljs-string">&#x27;inf&#x27;</span>)] * (amount + <span class="hljs-number">1</span>)<br>    dp[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, amount + <span class="hljs-number">1</span>):<br>        <span class="hljs-keyword">for</span> coin <span class="hljs-keyword">in</span> coins:<br>            <span class="hljs-keyword">if</span> i - coin &gt;= <span class="hljs-number">0</span>:<br>                dp[i] = <span class="hljs-built_in">min</span>(dp[i], dp[i - coin] + <span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">return</span> dp[amount] <span class="hljs-keyword">if</span> dp[amount] != <span class="hljs-built_in">float</span>(<span class="hljs-string">&#x27;inf&#x27;</span>) <span class="hljs-keyword">else</span> -<span class="hljs-number">1</span><br><br><span class="hljs-built_in">print</span>(coinChange([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>], <span class="hljs-number">11</span>))  <span class="hljs-comment"># 输出 3 (11 = 5 + 5 + 1)</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><strong>适用场景</strong>：最短路径、背包问题、最长子序列、编辑距离、股票买卖收益等。</li>
+<li><strong>关键点</strong>：<ol>
+<li>找到子问题</li>
+<li>明确状态定义</li>
+<li>写出状态转移方程</li>
+<li>选择自顶向下或自底向上的求解方式</li>
+</ol>
+</li>
+</ul>
+<p>动态规划的本质是**“用空间换时间”**，通过存储中间结果，极大减少重复计算，从而高效求解复杂问题。</p>
 
                 
               </div>
@@ -368,7 +373,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="category-chain-item">博客</a>
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
   
   
 
@@ -383,7 +388,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="print-no-link">#博客搭建</a>
+        <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="print-no-link">#动态规划</a>
       
     </div>
   
@@ -395,8 +400,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>hexo部署</div>
-      <div>http://example.com/2025/09/14/Hexo部署/</div>
+      <div>动态规划</div>
+      <div>http://example.com/2025/09/16/动态规划/</div>
     </div>
     <div class="license-meta">
       
@@ -408,7 +413,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年9月14日</div>
+          <div>2025年9月16日</div>
         </div>
       
       
@@ -440,18 +445,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/09/16/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">动态规划</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/14/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2025/09/14/Hexo%E9%83%A8%E7%BD%B2/" title="hexo部署">
+                        <span class="hidden-mobile">hexo部署</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
