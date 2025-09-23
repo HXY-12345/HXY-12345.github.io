@@ -19,26 +19,26 @@
   <meta name="author" content="HXXYY">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java的执行过程Java的执行过程Java的执行过程整体可以分为两个部分： 第一步由javac将源码编译成字节码（Bytecode），在这个过程中会进行词法分析、语法分析、语义分析，编译原理中这部分的编译称为前端编译。 接下来无需编译直接逐条将字节码解释执行，在解释执行的过程中，虚拟机同时对程序运行的信息进行收集，在这些信息的基础上，编译器会逐渐发挥作用，它会进行后端编译——把字节码编译成机器码">
+    <meta name="description" content="包装类型的缓存机制Java 基本数据类型的包装类型的大部分都用到了缓存机制来提升性能。 Byte,Short,Integer,Long 这 4 种包装类默认创建了数值 [-128，127] 的相应类型的缓存数据，Character 创建了数值在 [0,127] 范围的缓存数据，Boolean 直接返回 TRUE or FALSE。 对于 Integer，可以通过 JVM 参数 -XX:AutoBo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java的执行过程">
-<meta property="og:url" content="http://example.com/2025/09/18/Java%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:title" content="包装类型的缓存机制">
+<meta property="og:url" content="http://example.com/2025/09/23/%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/index.html">
 <meta property="og:site_name" content="HXXYY&#39;s Blog">
-<meta property="og:description" content="Java的执行过程Java的执行过程Java的执行过程整体可以分为两个部分： 第一步由javac将源码编译成字节码（Bytecode），在这个过程中会进行词法分析、语法分析、语义分析，编译原理中这部分的编译称为前端编译。 接下来无需编译直接逐条将字节码解释执行，在解释执行的过程中，虚拟机同时对程序运行的信息进行收集，在这些信息的基础上，编译器会逐渐发挥作用，它会进行后端编译——把字节码编译成机器码">
+<meta property="og:description" content="包装类型的缓存机制Java 基本数据类型的包装类型的大部分都用到了缓存机制来提升性能。 Byte,Short,Integer,Long 这 4 种包装类默认创建了数值 [-128，127] 的相应类型的缓存数据，Character 创建了数值在 [0,127] 范围的缓存数据，Boolean 直接返回 TRUE or FALSE。 对于 Integer，可以通过 JVM 参数 -XX:AutoBo">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/Java%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png">
-<meta property="article:published_time" content="2025-09-18T14:24:10.000Z">
-<meta property="article:modified_time" content="2025-09-18T14:28:02.153Z">
+<meta property="og:image" content="http://example.com/img/03.png">
+<meta property="article:published_time" content="2025-09-23T11:40:37.000Z">
+<meta property="article:modified_time" content="2025-09-23T11:47:51.815Z">
 <meta property="article:author" content="HXXYY">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/Java%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png">
+<meta name="twitter:image" content="http://example.com/img/03.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Java的执行过程 - HXXYY&#39;s Blog</title>
+  <title>包装类型的缓存机制 - HXXYY&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,13 +198,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/Java%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/03.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.4)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java的执行过程"></span>
+            <span id="subtitle" data-typed-text="包装类型的缓存机制"></span>
           
         </div>
 
@@ -220,8 +220,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-09-18 22:24" pubdate>
-          2025年9月18日 晚上
+        <time datetime="2025-09-23 19:40" pubdate>
+          2025年9月23日 晚上
         </time>
       </span>
     
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          417 字
         
       </span>
     
@@ -243,7 +243,7 @@
         
         
         
-          15 分钟
+          4 分钟
         
       </span>
     
@@ -289,63 +289,27 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Java的执行过程</h1>
+            <h1 id="seo-header">包装类型的缓存机制</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Java的执行过程"><a href="#Java的执行过程" class="headerlink" title="Java的执行过程"></a>Java的执行过程</h1><h1 id="Java的执行过程-1"><a href="#Java的执行过程-1" class="headerlink" title="Java的执行过程"></a>Java的执行过程</h1><p>Java的执行过程整体可以分为两个部分：</p>
-<p>第一步由javac将<strong>源码编译成字节码（Bytecode）</strong>，在这个过程中会进行词法分析、语法分析、语义分析，编译原理中这部分的编译称为前端编译。</p>
-<p>接下来无需编译直接逐条将字节码解释执行，在解释执行的过程中，虚拟机同时对程序运行的信息进行收集，在这些信息的基础上，编译器会逐渐发挥作用，它会进行后端编译——把<strong>字节码编译成机器码</strong>，但不是所有的代码都会被编译，只有被JVM认定为的热点代码，才可能被编译。</p>
-<p>怎么样才会被认为是**<code>热点代码</code><strong>呢？JVM中会设置一个</strong>阈值**，当方法或者代码块的在一定时间内的调用次数超过这个阈值时就会被编译，存入<code>codeCache</code>中。当下次执行时，再遇到这段代码，就会从codeCache中读取机器码，直接执行，以此来提升程序运行的性能。整体的执行过程大致如下图所示：</p>
-<p><img src="/2025/09/18/Java%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/image.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p><strong>JVM 会动态决定解释执行还是 JIT 编译。</strong>（Java 程序后期越跑越快的原因）</p>
-<h1 id="JIT-即时编译"><a href="#JIT-即时编译" class="headerlink" title="JIT-即时编译"></a><strong>JIT-即时编译</strong></h1><p><strong>（Just in Time Compilation）</strong></p>
-<p>Java虚拟机根据方法的调用次数以及循环回边的执行次数来触发即时编译。循环回边是一个控制流图中的概念，程序中可以简单理解为往回跳转的指令，比如下面这段代码：</p>
-<p>循环回边</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java">publicvoidnlp(Object obj) &#123;<br><span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">200</span>; i++) &#123;<br>    sum += i;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1 id="包装类型的缓存机制"><a href="#包装类型的缓存机制" class="headerlink" title="包装类型的缓存机制"></a>包装类型的缓存机制</h1><p>Java 基本数据类型的包装类型的大部分都用到了缓存机制来提升性能。</p>
+<p><code>Byte</code>,<code>Short</code>,<code>Integer</code>,<code>Long</code> 这 4 种包装类默认创建了数值 <strong>[-128，127]</strong> 的相应类型的缓存数据，<code>Character</code> 创建了数值在 <strong>[0,127]</strong> 范围的缓存数据，<code>Boolean</code> 直接返回 <code>TRUE</code> or <code>FALSE</code>。</p>
+<p>对于 <code>Integer</code>，可以通过 JVM 参数 <code>-XX:AutoBoxCacheMax=&lt;size&gt;</code> 修改缓存上限，但不能修改下限 -128。实际使用时，并不建议设置过大的值，避免浪费内存，甚至是 OOM。</p>
+<p>对于<code>Byte</code>,<code>Short</code>,<code>Long</code> ,<code>Character</code> 没有类似 <code>-XX:AutoBoxCacheMax</code> 参数可以修改，因此缓存范围是固定的，无法通过 JVM 参数调整。<code>Boolean</code> 则直接返回预定义的 <code>TRUE</code> 和 <code>FALSE</code> 实例，没有缓存范围的概念。</p>
+<p><strong>Integer 缓存源码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Integer <span class="hljs-title function_">valueOf</span><span class="hljs-params">(<span class="hljs-type">int</span> i)</span> &#123;<br>    <span class="hljs-keyword">if</span> (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)<br>    <span class="hljs-comment">// IntegerCache.cache 是一个静态数组，里面预先存好了 -128 到 127 的 Integer 实例。</span><br>    <span class="hljs-comment">// i + 128 是因为数组下标从 0 开始：i = -128 时，下标 = 0; i = 127 时，下标 = 255</span><br>        <span class="hljs-keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Integer</span>(i);<br>&#125;<br><br><span class="hljs-comment">// 私有静态内部类</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">IntegerCache</span> &#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-variable">low</span> <span class="hljs-operator">=</span> -<span class="hljs-number">128</span>;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> high;<br>    <span class="hljs-keyword">static</span> &#123;<br>        <span class="hljs-comment">// high value may be configured by property</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">h</span> <span class="hljs-operator">=</span> <span class="hljs-number">127</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>上面这段代码经过编译生成下面的字节码。其中，偏移量为18的字节码将往回跳至偏移量为4的字节码中。在解释执行时，每当运行一次该指令，Java虚拟机便会将该方法的循环回边计数器加1。</p>
-<p>字节码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">public void nlp(java.lang.Object);<br>    Code:<br>       0: iconst_0<br>       1: istore_1<br>       2: iconst_0<br>       3: istore_2<br>       4: iload_2<br>       5: sipush        200<br>       8: if_icmpge     21<br>      11: iload_1<br>      12: iload_2<br>      13: iadd<br>      14: istore_1<br>      15: iinc          2, 1<br>      18: goto          4<br>      21: <span class="hljs-built_in">return</span><br></code></pre></td></tr></table></figure>
+<p><strong>示例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CacheDemo</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Integer</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">126</span>;<br>        <span class="hljs-type">Integer</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">126</span>;<br>        <span class="hljs-type">Integer</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-number">128</span>;<br>        <span class="hljs-type">Integer</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> <span class="hljs-number">128</span>;<br><br>        System.out.println(a == b); <span class="hljs-comment">// true  缓存命中</span><br>        System.out.println(c == d); <span class="hljs-comment">// false 超出缓存范围</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>在即时编译过程中，编译器会识别循环的头部和尾部。上面这段字节码中，循环体的头部和尾部分别为偏移量为11的字节码和偏移量为15的字节码。编译器将在循环体结尾增加循环回边计数器的代码，来对循环进行计数。</p>
-<p>当方法的调用次数和循环回边的次数的和，超过由参数-XX:CompileThreshold指定的阈值时（使用C1时，默认值为1500；使用C2时，默认值为10000），就会触发即时编译。</p>
-<p>开启分层编译的情况下，-XX:CompileThreshold参数设置的阈值将会失效，触发编译会由以下的条件来判断：</p>
 <ul>
-<li>方法调用次数大于由参数-XX:TierXInvocationThreshold指定的阈值乘以系数。</li>
-<li>方法调用次数大于由参数-XX:TierXMINInvocationThreshold指定的阈值乘以系数，并且方法调用次数和循环回边次数之和大于由参数-XX:TierXCompileThreshold指定的阈值乘以系数时。</li>
+<li><code>a</code> 和 <code>b</code> 指向同一对象，<code>==</code> 为 <code>true</code>。</li>
+<li><code>c</code> 和 <code>d</code> 超出缓存范围，各自 new 了对象，<code>==</code> 为 <code>false</code>。</li>
 </ul>
-<p>分层编译触发条件公式</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">i &gt; TierXInvocationThreshold * s || (i &gt; TierXMinInvocationThreshold * s  &amp;&amp; i + b &gt; TierXCompileThreshold * s) <br>i为调用次数，b是循环回边次数<br></code></pre></td></tr></table></figure>
-
-<p>上述满足其中一个条件就会触发即时编译，并且JVM会根据当前的编译方法数以及编译线程数动态调整系数s。</p>
-<h1 id="编译优化"><a href="#编译优化" class="headerlink" title="编译优化"></a>编译优化</h1><p>即时编译器会对正在运行的服务进行一系列的优化，包括字节码解析过程中的分析，根据编译过程中代码的一些中间形式来做局部优化，还会根据程序依赖图进行全局优化，最后才会生成机器码。</p>
-<p><strong>1.中间表达形式（Intermediate Representation）IR</strong></p>
-<p>在编译原理中，通常把编译器分为前端和后端，前端编译经过词法分析、语法分析、语义分析生成中间表达形式（Intermediate Representation，以下称为IR），后端会对IR进行优化，生成目标代码。</p>
-<p>Java字节码就是一种IR，但是字节码的结构复杂，字节码这样代码形式的IR也不适合做全局的分析优化。现代编译器一般采用图结构的IR，静态单赋值（Static Single Assignment，SSA）IR是目前比较常用的一种。这种IR的特点是每个变量只能被赋值一次，而且只有当变量被赋值之后才能使用。</p>
-<p>SSA IR</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs abnf">&#123;<br>  a <span class="hljs-operator">=</span> <span class="hljs-number">1</span><span class="hljs-comment">;</span><br>  a <span class="hljs-operator">=</span> <span class="hljs-number">2</span><span class="hljs-comment">;</span><br>  b <span class="hljs-operator">=</span> a<span class="hljs-comment">;</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>上述代码中我们可以轻易地发现a &#x3D; 1的赋值是冗余的，但是编译器不能。传统的编译器需要借助数据流分析，从后至前依次确认哪些变量的值被覆盖掉。不过，如果借助了SSA IR，编译器则可以很容易识别冗余赋值。</p>
-<p>上面代码的SSA IR形式的伪代码可以表示为：</p>
-<p>SSA IR</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs abnf">&#123;<br>  a_1 <span class="hljs-operator">=</span> <span class="hljs-number">1</span><span class="hljs-comment">;</span><br>  a_2 <span class="hljs-operator">=</span> <span class="hljs-number">2</span><span class="hljs-comment">;</span><br>  b_1 <span class="hljs-operator">=</span> a_2<span class="hljs-comment">;</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>由于SSA IR中每个变量只能赋值一次，所以代码中的a在SSA IR中会分成a_1、a_2两个变量来赋值，这样编译器就可以很容易通过扫描这些变量来发现a_1的赋值后并没有使用，赋值是冗余的。</p>
-<p><strong>2.方法内联</strong></p>
-<p>方法内联，是指在编译过程中遇到方法调用时，将目标方法的方法体纳入编译范围之中，并取代原方法调用的优化手段。JIT大部分的优化都是在内联的基础上进行的，方法内联是即时编译器中非常重要的一环。</p>
-<p><strong>3. 逃逸分析</strong></p>
-<p>逃逸分析是“一种确定指针动态范围的静态分析，它可以分析在程序的哪些地方可以访问到指针”。Java虚拟机的即时编译器会对新建的对象进行逃逸分析，判断对象是否逃逸出线程或者方法。</p>
-<p>逃逸分析通常是在方法内联的基础上进行的，即时编译器可以根据逃逸分析的结果进行诸如锁消除、栈上分配以及标量替换的优化。</p>
-<p><strong>4. Loop Transformations</strong></p>
-<p>C2编译器在构建Ideal Graph后会进行很多的全局优化，其中就包括对循环的转换，最重要的两种转换就是循环展开和循环分离。</p>
-<p><strong>5. 窥孔优化与寄存器分配</strong></p>
-<p>窥孔优化是优化的最后一步，这之后就会程序就会转换成机器码，窥孔优化就是将编译器所生成的中间代码（或目标代码）中相邻指令，将其中的某些组合替换为效率更高的指令组，常见的比如强度削减、常数合并等，看下面这个例子就是一个强度削减的例子：</p>
-<p>强度削减</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">y1=x1*3  经过强度削减后得到  y1=(x1&lt;&lt;<span class="hljs-string">1)+x1</span><br></code></pre></td></tr></table></figure>
-
-<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a target="_blank" rel="noopener" href="https://tech.meituan.com/2020/10/22/java-jit-practice-in-meituan.html">基本功 | Java即时编译器原理解析及实践</a></p>
+<p><strong>包装类型缓存机制  ⇒小范围的数值对象被预先创建并复用</strong>。</p>
+<p>这样做节省内存和提高效率，但比较时仍推荐使用<code>equals()</code>,以避免因缓存范围不同带来的“&#x3D;&#x3D;”误判。</p>
 
                 
               </div>
@@ -391,8 +355,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Java的执行过程</div>
-      <div>http://example.com/2025/09/18/Java的执行过程/</div>
+      <div>包装类型的缓存机制</div>
+      <div>http://example.com/2025/09/23/包装类型的缓存机制/</div>
     </div>
     <div class="license-meta">
       
@@ -404,7 +368,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年9月18日</div>
+          <div>2025年9月23日</div>
         </div>
       
       
@@ -436,18 +400,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/09/23/%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/" title="包装类型的缓存机制">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">包装类型的缓存机制</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/16/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划">
-                        <span class="hidden-mobile">动态规划</span>
+                      <a href="/2025/09/18/Java%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/" title="Java的执行过程">
+                        <span class="hidden-mobile">Java的执行过程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
