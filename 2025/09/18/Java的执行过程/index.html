@@ -22,17 +22,17 @@
     <meta name="description" content="Java的执行过程Java的执行过程Java的执行过程整体可以分为两个部分： 第一步由javac将源码编译成字节码（Bytecode），在这个过程中会进行词法分析、语法分析、语义分析，编译原理中这部分的编译称为前端编译。 接下来无需编译直接逐条将字节码解释执行，在解释执行的过程中，虚拟机同时对程序运行的信息进行收集，在这些信息的基础上，编译器会逐渐发挥作用，它会进行后端编译——把字节码编译成机器码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java的执行过程">
-<meta property="og:url" content="http://example.com/2025/09/18/Java%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:url" content="https://hxxyy.info/2025/09/18/Java%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/index.html">
 <meta property="og:site_name" content="HXXYY&#39;s Blog">
 <meta property="og:description" content="Java的执行过程Java的执行过程Java的执行过程整体可以分为两个部分： 第一步由javac将源码编译成字节码（Bytecode），在这个过程中会进行词法分析、语法分析、语义分析，编译原理中这部分的编译称为前端编译。 接下来无需编译直接逐条将字节码解释执行，在解释执行的过程中，虚拟机同时对程序运行的信息进行收集，在这些信息的基础上，编译器会逐渐发挥作用，它会进行后端编译——把字节码编译成机器码">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/Java%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png">
+<meta property="og:image" content="https://hxxyy.info/img/Java%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png">
 <meta property="article:published_time" content="2025-09-18T14:24:10.000Z">
 <meta property="article:modified_time" content="2025-09-18T14:28:02.153Z">
 <meta property="article:author" content="HXXYY">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/Java%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png">
+<meta name="twitter:image" content="https://hxxyy.info/img/Java%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -76,7 +76,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"hxxyy.info","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -392,7 +392,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Java的执行过程</div>
-      <div>http://example.com/2025/09/18/Java的执行过程/</div>
+      <div>https://hxxyy.info/2025/09/18/Java的执行过程/</div>
     </div>
     <div class="license-meta">
       
