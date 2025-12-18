@@ -19,26 +19,26 @@
   <meta name="author" content="HXXYY">
   <meta name="keywords" content="">
   
-    <meta name="description" content="RAG基础一、为什么要使用RAG1.1 解决LLM的核心局限   问题 RAG的解决方案    静态知识局限 实时检索外部知识库，支持动态更新   幻觉（Hallucination） 基于检索内容生成，错误率降低   领域专业性不足 引入领域特定知识库（如医疗&#x2F;法律）   数据隐私风险 本地化部署知识库，避免敏感数据泄露   1.2 关键优势 准确性提升 知识基础扩展：补充LLM预训练知">
+    <meta name="description" content="第一章 初识智能体什么是智能体在人工智能领域，智能体被定义为任何能够通过传感器（Sensors）感知其所处环境（Environment），并自主地通过**执行器（Actuators）采取行动（Action）**以达成特定目标的实体。 智能体的运行机制智能体并非一次性完成任务，而是通过一个持续的循环与环境进行交互，这个核心机制被称为 智能体循环 (Agent Loop)。如图 1.5 所示，该循环描">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RAG基础">
-<meta property="og:url" content="https://hxxyy.info/2025/12/17/RAG%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="ClaudeCode部署配置">
+<meta property="og:url" content="https://hxxyy.info/2025/12/18/HelloAgent(%E4%B8%80)%20%E5%88%9D%E8%AF%86%E6%99%BA%E8%83%BD%E4%BD%93/index.html">
 <meta property="og:site_name" content="HXXYY&#39;s Blog">
-<meta property="og:description" content="RAG基础一、为什么要使用RAG1.1 解决LLM的核心局限   问题 RAG的解决方案    静态知识局限 实时检索外部知识库，支持动态更新   幻觉（Hallucination） 基于检索内容生成，错误率降低   领域专业性不足 引入领域特定知识库（如医疗&#x2F;法律）   数据隐私风险 本地化部署知识库，避免敏感数据泄露   1.2 关键优势 准确性提升 知识基础扩展：补充LLM预训练知">
+<meta property="og:description" content="第一章 初识智能体什么是智能体在人工智能领域，智能体被定义为任何能够通过传感器（Sensors）感知其所处环境（Environment），并自主地通过**执行器（Actuators）采取行动（Action）**以达成特定目标的实体。 智能体的运行机制智能体并非一次性完成任务，而是通过一个持续的循环与环境进行交互，这个核心机制被称为 智能体循环 (Agent Loop)。如图 1.5 所示，该循环描">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hxxyy.info/img/RAG%E5%9F%BA%E7%A1%80.png">
-<meta property="article:published_time" content="2025-12-17T11:01:59.000Z">
-<meta property="article:modified_time" content="2025-12-17T13:18:36.180Z">
+<meta property="og:image" content="https://hxxyy.info/img/%E5%88%9D%E8%AF%86%E6%99%BA%E8%83%BD%E4%BD%93.png">
+<meta property="article:published_time" content="2025-12-18T12:01:00.000Z">
+<meta property="article:modified_time" content="2025-12-18T14:28:02.720Z">
 <meta property="article:author" content="HXXYY">
-<meta property="article:tag" content="RAG">
+<meta property="article:tag" content="智能体">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hxxyy.info/img/RAG%E5%9F%BA%E7%A1%80.png">
+<meta name="twitter:image" content="https://hxxyy.info/img/%E5%88%9D%E8%AF%86%E6%99%BA%E8%83%BD%E4%BD%93.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>RAG基础 - HXXYY&#39;s Blog</title>
+  <title>ClaudeCode部署配置 - HXXYY&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,13 +198,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/RAG%E5%9F%BA%E7%A1%80.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/%E5%88%9D%E8%AF%86%E6%99%BA%E8%83%BD%E4%BD%93.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.4)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="RAG基础"></span>
+            <span id="subtitle" data-typed-text="ClaudeCode部署配置"></span>
           
         </div>
 
@@ -220,8 +220,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-12-17 19:01" pubdate>
-          2025年12月17日 晚上
+        <time datetime="2025-12-18 20:01" pubdate>
+          2025年12月18日 晚上
         </time>
       </span>
     
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          930 字
+          1.4k 字
         
       </span>
     
@@ -243,7 +243,7 @@
         
         
         
-          8 分钟
+          12 分钟
         
       </span>
     
@@ -289,127 +289,48 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">RAG基础</h1>
+            <h1 id="seo-header">ClaudeCode部署配置</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="RAG基础"><a href="#RAG基础" class="headerlink" title="RAG基础"></a>RAG基础</h1><h1 id="一、为什么要使用RAG"><a href="#一、为什么要使用RAG" class="headerlink" title="一、为什么要使用RAG"></a>一、为什么要使用RAG</h1><h2 id="1-1-解决LLM的核心局限"><a href="#1-1-解决LLM的核心局限" class="headerlink" title="1.1 解决LLM的核心局限"></a>1.1 解决LLM的核心局限</h2><table>
-<thead>
-<tr>
-<th><strong>问题</strong></th>
-<th><strong>RAG的解决方案</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>静态知识局限</strong></td>
-<td>实时检索外部知识库，支持动态更新</td>
-</tr>
-<tr>
-<td><strong>幻觉（Hallucination）</strong></td>
-<td>基于检索内容生成，错误率降低</td>
-</tr>
-<tr>
-<td><strong>领域专业性不足</strong></td>
-<td>引入领域特定知识库（如医疗&#x2F;法律）</td>
-</tr>
-<tr>
-<td><strong>数据隐私风险</strong></td>
-<td>本地化部署知识库，避免敏感数据泄露</td>
-</tr>
-</tbody></table>
-<h2 id="1-2-关键优势"><a href="#1-2-关键优势" class="headerlink" title="1.2 关键优势"></a>1.2 关键优势</h2><ol>
-<li><strong>准确性提升</strong><ul>
-<li>知识基础扩展：补充LLM预训练知识的不足，增强对专业领域的理解</li>
-<li><strong>降低幻觉现象</strong>：通过提供具体参考材料，减少无中生有的情况</li>
-<li>可溯源引用：支持引用原始文档，提高输出内容的可信度和说服力</li>
+                <h1 id="第一章-初识智能体"><a href="#第一章-初识智能体" class="headerlink" title="第一章 初识智能体"></a>第一章 初识智能体</h1><h1 id="什么是智能体"><a href="#什么是智能体" class="headerlink" title="什么是智能体"></a>什么是智能体</h1><p>在人工智能领域，智能体被定义为任何能够通过<strong>传感器（Sensors）<strong>感知其所处</strong>环境（Environment）</strong>，并<strong>自主</strong>地通过**执行器（Actuators）<strong>采取</strong>行动（Action）**以达成特定目标的实体。</p>
+<h2 id="智能体的运行机制"><a href="#智能体的运行机制" class="headerlink" title="智能体的运行机制"></a>智能体的运行机制</h2><p>智能体并非一次性完成任务，而是通过一个持续的循环与环境进行交互，这个核心机制被称为 <strong>智能体循环 (Agent Loop)</strong>。如图 1.5 所示，该循环描述了智能体与环境之间的动态交互过程，构成了其自主行为的基础。</p>
+<p><img src="/2025/09/14/Hexo%E9%83%A8%E7%BD%B2/ent(%E4%B8%80)%20%E5%88%9D%E8%AF%86%E6%99%BA%E8%83%BD%E4%BD%93/image.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>这个循环主要包含以下几个相互关联的阶段：</p>
+<ol>
+<li><strong>感知 (Perception)</strong>：这是循环的起点。智能体通过其传感器（例如，API 的监听端口、用户输入接口）接收来自环境的输入信息。这些信息，即<strong>观察 (Observation)</strong>，既可以是用户的初始指令，也可以是上一步行动所导致的环境状态变化反馈。</li>
+<li><strong>思考 (Thought)</strong>：接收到观察信息后，智能体进入其核心决策阶段。对于 LLM 智能体而言，这通常是由大语言模型驱动的内部推理过程。如图所示，“思考”阶段可进一步细分为两个关键环节：<ul>
+<li><strong>规划 (Planning)</strong>：智能体基于当前的观察和其内部记忆，更新对任务和环境的理解，并制定或调整一个行动计划。这可能涉及将复杂目标分解为一系列更具体的子任务。</li>
+<li><strong>工具选择 (Tool Selection)</strong>：根据当前计划，智能体从其可用的工具库中，选择最适合执行下一步骤的工具，并确定调用该工具所需的具体参数。</li>
 </ul>
 </li>
-<li><strong>实时性保障</strong><ul>
-<li>动态知识更新：知识库内容可以独立于模型进行实时更新和维护</li>
-<li>减少时滞性：规避LLM预训练数据截止日期带来的知识时效性问题</li>
-</ul>
-</li>
-<li><strong>成本效益</strong><ul>
-<li>避免频繁微调：相比反复微调LLM，维护知识库成本更低</li>
-<li>降低推理成本：针对特定领域问题，可使用更小的基础模型配合知识库</li>
-<li>资源消耗优化：减少存储完整知识在模型权重中的计算资源需求</li>
-<li>快速适应变化：新信息或政策更新只需更新知识库，无需重训练模型</li>
-</ul>
-</li>
-<li><strong>可扩展性</strong><ul>
-<li>多源集成：支持从不同来源和格式的数据中构建统一知识库</li>
-<li>模块化设计：检索组件可独立优化，不影响生成组件</li>
-</ul>
-</li>
+<li><strong>行动 (Action)</strong>：决策完成后，智能体通过其执行器（Actuators）执行具体的行动。这通常表现为调用一个选定的工具（如代码解释器、搜索引擎 API），从而对环境施加影响，意图改变环境的状态。</li>
 </ol>
-<h1 id="二、什么是RAG"><a href="#二、什么是RAG" class="headerlink" title="二、什么是RAG"></a>二、什么是RAG</h1><h2 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h2><p><strong>RAG</strong>（Retrieval-Augmented Generation 检索增强生成）是一种融合信息检索与文本生成的技术范式。其核心逻辑是：在大型语言模型（LLM）生成文本前，先通过检索机制从外部知识库中动态获取相关信息，并将检索结果融入生成过程，从而提升输出的准确性和时效性。</p>
-<p>**RAG本质：**在LLM生成文本之前，先从外部知识库中检索相关信息，作为上下文辅助生成更准确的回答。</p>
-<h2 id="1-2-技术原理"><a href="#1-2-技术原理" class="headerlink" title="1.2 技术原理"></a>1.2 技术原理</h2><ul>
-<li>双阶段架构</li>
-</ul>
-<p><img src="/2025/12/17/RAG%E5%9F%BA%E7%A1%80/image.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>行动并非循环的终点。智能体的行动会引起<strong>环境 (Environment)</strong> 的<strong>状态变化 (State Change)</strong>，环境随即会产生一个新的<strong>观察 (Observation)</strong> 作为结果反馈。这个新的观察又会在下一轮循环中被智能体的感知系统捕获，形成一个持续的“感知-思考-行动-观察”的闭环。智能体正是通过不断重复这一循环，逐步推进任务，从初始状态向目标状态演进。</p>
+<h2 id="智能体的感知与行动"><a href="#智能体的感知与行动" class="headerlink" title="智能体的感知与行动"></a>智能体的感知与行动</h2><p>在工程实践中，为了让 LLM 能够有效驱动这个循环，我们需要一套明确的<strong>交互协议 (Interaction Protocol)</strong> 来规范其与环境之间的信息交换。</p>
+<p>在许多现代智能体框架中，这一协议体现在对智能体每一次输出的结构化定义上。智能体的输出不再是单一的自然语言回复，而是一段遵循特定格式的文本，其中明确地展示了其内部的推理过程与最终决策。</p>
+<p>这个结构通常包含两个核心部分：</p>
 <ul>
-<li><strong>关键组件</strong>：<ol>
-<li><strong>索引（Indexing）</strong> 📑：将非结构化文档（PDF&#x2F;Word等）分割为片段，通过嵌入模型转换为向量数据。</li>
-<li><strong>检索（Retrieval）</strong> 🔍️：基于查询语义，从向量数据库召回最相关的文档片段（Context）。</li>
-<li><strong>生成（Generation）</strong> ✨：将检索结果作为上下文输入LLM，生成自然语言响应。</li>
-</ol>
-</li>
+<li><strong>Thought (思考)</strong>：这是智能体内部决策的“快照”。它以自然语言形式阐述了智能体如何分析当前情境、回顾上一步的观察结果、进行自我反思与问题分解，并最终规划出下一步的具体行动。</li>
+<li><strong>Action (行动)</strong>：这是智能体基于思考后，决定对环境施加的具体操作，通常以函数调用的形式表示。</li>
 </ul>
-<h2 id="1-3-RAG分类"><a href="#1-3-RAG分类" class="headerlink" title="1.3 RAG分类"></a>1.3 RAG分类</h2><p>RAG技术按照复杂度可划分为：</p>
-<table>
-<thead>
-<tr>
-<th><strong>初级RAG</strong></th>
-<th><strong>高级RAG</strong></th>
-<th><strong>模块化RAG</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>基础”索引-检索-生成”流程</td>
-<td>增加数据清洗流程</td>
-<td>灵活集成搜索引擎</td>
-</tr>
-<tr>
-<td>简单文档分块</td>
-<td>元数据优化</td>
-<td>强化学习优化</td>
-</tr>
-<tr>
-<td>基本向量检索机制</td>
-<td>多轮检索策略</td>
-<td>知识图谱增强</td>
-</tr>
-<tr>
-<td>-</td>
-<td>提升准确性和效率</td>
-<td>支持复杂业务场景</td>
-</tr>
-</tbody></table>
-<p><img src="/2025/12/17/RAG%E5%9F%BA%E7%A1%80/image01.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<h2 id="1-4-构建步骤"><a href="#1-4-构建步骤" class="headerlink" title="1.4 构建步骤"></a>1.4 构建步骤</h2><ol>
-<li><strong>数据准备</strong><ul>
-<li>格式支持：PDF、Word、网页文本等</li>
-<li>分块策略：按语义（如段落）或固定长度切分，避免信息碎片化</li>
-</ul>
-</li>
-<li><strong>索引构建</strong><ul>
-<li>嵌入模型：选取开源模型（如text-embedding-ada-002）或微调领域专用模型</li>
-<li>向量化：将文本分块转换为向量存入数据库</li>
-</ul>
-</li>
-<li><strong>检索优化</strong><ul>
-<li>混合检索：结合关键词（BM25）与语义搜索（向量相似度）提升召回率</li>
-<li>重排序（Rerank）：用小模型筛选Top-K相关片段（如Cohere Reranker）</li>
-</ul>
-</li>
-<li><strong>生成集成</strong><ul>
-<li>提示工程：设计模板引导LLM融合检索内容</li>
-<li>LLM选型：GPT、Claude、Ollama等（按成本&#x2F;性能权衡）</li>
-</ul>
-</li>
-</ol>
+<p>例如，一个正在规划旅行的智能体可能会生成如下格式化的输出：</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs vbnet"><span class="hljs-symbol">Thought:</span> 用户想知道北京的天气。我需要调用天气查询工具。<br><span class="hljs-symbol">Action:</span> get_weather(<span class="hljs-string">&quot;北京&quot;</span>)Copy <span class="hljs-keyword">to</span> clipboardErrorCopied<br></code></pre></td></tr></table></figure>
+
+<p>这里的<code>Action</code>字段构成了对外部世界的指令。一个外部的<strong>解析器 (Parser)</strong> 会捕捉到这个指令，并调用相应的<code>get_weather</code>函数。</p>
+<p>行动执行后，环境会返回一个结果。例如，<code>get_weather</code>函数可能返回一个包含详细天气数据的 JSON 对象。然而，原始的机器可读数据（如 JSON）通常包含 LLM 无需关注的冗余信息，且格式不符合其自然语言处理的习惯。</p>
+<p>因此，感知系统的一个重要职责就是扮演传感器的角色：将这个原始输出处理并封装成一段简洁、清晰的自然语言文本，即观察。</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs oxygene">Observation: 北京当前天气为晴，气温<span class="hljs-number">25</span>摄氏度，微风。<span class="hljs-keyword">Copy</span> <span class="hljs-keyword">to</span> clipboardErrorCopied<br></code></pre></td></tr></table></figure>
+
+<p>这段<code>Observation</code>文本会被反馈给智能体，作为下一轮循环的主要输入信息，供其进行新一轮的<code>Thought</code>和<code>Action</code>。</p>
+<p>综上所述，通过这个由 Thought、Action、Observation 构成的严谨循环，LLM 智能体得以将内部的语言推理能力，与外部环境的真实信息和工具操作能力有效地结合起来。</p>
+<h1 id="5分钟实现第一个智能体"><a href="#5分钟实现第一个智能体" class="headerlink" title="5分钟实现第一个智能体"></a>5分钟实现第一个智能体</h1><p><a target="_blank" rel="noopener" href="https://www.tavily.com/">Tavily - The Web Access Layer for AI Agents</a></p>
+<p><a target="_blank" rel="noopener" href="https://datawhalechina.github.io/hello-agents/#/./chapter1/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E5%88%9D%E8%AF%86%E6%99%BA%E8%83%BD%E4%BD%93?id=_13-%e5%8a%a8%e6%89%8b%e4%bd%93%e9%aa%8c%ef%bc%9a5-%e5%88%86%e9%92%9f%e5%ae%9e%e7%8e%b0%e7%ac%ac%e4%b8%80%e4%b8%aa%e6%99%ba%e8%83%bd%e4%bd%93">Hello-Agents</a></p>
+<h2 id="智能体应用的协作模式"><a href="#智能体应用的协作模式" class="headerlink" title="智能体应用的协作模式"></a>智能体应用的协作模式</h2><p>基于智能体在任务中的角色和自主性程度，其协作模式主要分为两种：</p>
+<p>一种是作为高效工具，深度融入我们的工作流；</p>
+<p>另一种则是作为自主的协作者，与其他智能体协作完成复杂目标。</p>
+<p><strong>LangGraph与LangChain</strong></p>
 
                 
               </div>
@@ -443,7 +364,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/RAG/" class="print-no-link">#RAG</a>
+        <a href="/tags/%E6%99%BA%E8%83%BD%E4%BD%93/" class="print-no-link">#智能体</a>
       
     </div>
   
@@ -455,8 +376,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>RAG基础</div>
-      <div>https://hxxyy.info/2025/12/17/RAG基础/</div>
+      <div>ClaudeCode部署配置</div>
+      <div>https://hxxyy.info/2025/12/18/HelloAgent(一) 初识智能体/</div>
     </div>
     <div class="license-meta">
       
@@ -468,7 +389,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年12月17日</div>
+          <div>2025年12月18日</div>
         </div>
       
       
@@ -500,18 +421,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/12/18/HelloAgent(%E4%B8%80)%20%E5%88%9D%E8%AF%86%E6%99%BA%E8%83%BD%E4%BD%93/" title="ClaudeCode部署配置">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ClaudeCode部署配置</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/12/11/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Java异常处理">
-                        <span class="hidden-mobile">Java异常处理</span>
+                      <a href="/2025/12/17/RAG%E5%9F%BA%E7%A1%80/" title="RAG基础">
+                        <span class="hidden-mobile">RAG基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
